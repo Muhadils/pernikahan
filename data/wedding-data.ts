@@ -76,16 +76,16 @@ export interface WeddingData {
 export const weddingData: WeddingData = {
     couple: {
         bride: {
-            fullName: 'Tika',
-            shortName: 'Tika',
-            instagram: '@tika',
-            parents: 'Putri dari Bapak [Nama Ayah Tika] & Ibu [Nama Ibu Tika]',
+            fullName: 'Putra',
+            shortName: 'Putra',
+            instagram: '@putra',
+            parents: 'Putri dari Bapak [Nama Ayah Putra] & Ibu [Nama Ibu Putra]',
         },
         groom: {
-            fullName: 'Aidil',
-            shortName: 'Aidil',
-            instagram: '@aidil',
-            parents: 'Putra dari Bapak [Nama Ayah Aidil] & Ibu [Nama Ibu Aidil]',
+            fullName: 'Hamja',
+            shortName: 'Hamja',
+            instagram: '@hamja',
+            parents: 'Putra dari Bapak [Nama Ayah Hamja] & Ibu [Nama Ibu Hamja]',
         },
         heroImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070',
     },

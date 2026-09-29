@@ -38,12 +38,12 @@ const alexBrush = Alex_Brush({
 });
 
 export const metadata: Metadata = {
-    title: 'Aidil & Tika Wedding Invitation',
-    description: 'You are cordially invited to celebrate the wedding of Aidil and Tika',
-    keywords: 'wedding, invitation, undangan pernikahan, Aidil, Tika',
+    title: 'Putra & Hamja Wedding Invitation',
+    description: 'You are cordially invited to celebrate the wedding of Putra and Hamja',
+    keywords: 'wedding, invitation, undangan pernikahan, Putra, Hamja',
     authors: [{ name: 'Wedding Invitation' }],
     openGraph: {
-        title: 'Aidil & Tika Wedding Invitation',
+        title: 'Putra & Hamja Wedding Invitation',
         description: 'You are cordially invited to celebrate our special day',
         type: 'website',
         siteName: 'Wedding Invitation',
