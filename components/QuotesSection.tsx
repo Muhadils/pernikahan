@@ -36,7 +36,7 @@ const QuotesSection: React.FC<QuotesSectionProps> = ({ type }) => {
                     transition={{ delay: 0.5, type: 'spring' }}
                     className="text-yellow-700 text-4xl mb-2 block font-serif"
                   >
-                    "
+                    &quot;
                   </motion.span>
                   <p className="text-lg md:text-2xl font-serif text-gray-900 italic tracking-wide leading-relaxed">
                     {quote.salam}
@@ -59,7 +59,7 @@ const QuotesSection: React.FC<QuotesSectionProps> = ({ type }) => {
                   transition={{ delay: 1, type: 'spring' }}
                   className="text-yellow-700 text-4xl mt-2 block font-serif"
                 >
-                  "
+                  &quot;
                 </motion.span>
               </>
             ) : (
