@@ -66,7 +66,7 @@ const QuotesSection: React.FC<QuotesSectionProps> = ({ type }) => {
               <>
                 <div className="relative inline-block mb-6">
                   <h3 className="text-3xl md:text-5xl font-serif text-gray-900 z-10 relative tracking-tight">
-                    {quote.title}
+                    {(quote as any).title}
                   </h3>
                   <div className="absolute -bottom-2 left-0 w-full h-3 bg-yellow-200/40 -z-0 blur-sm" />
                 </div>
@@ -82,7 +82,7 @@ const QuotesSection: React.FC<QuotesSectionProps> = ({ type }) => {
                   
                   <div className="mt-12 flex flex-col items-center">
                     <p className="text-[10px] uppercase tracking-[0.5em] text-gray-500 mb-4 font-semibold">
-                      {quote.footer}
+                      {(quote as any).footer}
                     </p>
                     <p className="text-3xl md:text-5xl font-serif font-bold text-yellow-900 tracking-tighter">
                       {weddingData.couple.bride.shortName} <span className="text-yellow-600 font-light mx-1 italic">&</span> {weddingData.couple.groom.shortName}
