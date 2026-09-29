@@ -439,6 +439,8 @@ export default function AdminPage() {
                                         <InputField label="Bank / Platform" value={gift.bankName} onChange={(v) => updateField(`gifts[${index}].bankName`, v)} />
                                         <InputField label="Nomor Rekening" value={gift.accountNumber} onChange={(v) => updateField(`gifts[${index}].accountNumber`, v)} />
                                         <InputField label="Nama Pemilik" value={gift.accountHolder} onChange={(v) => updateField(`gifts[${index}].accountHolder`, v)} />
+                                        <InputField label="No. WhatsApp Konfirmasi (Opsional)" value={gift.whatsapp} onChange={(v) => updateField(`gifts[${index}].whatsapp`, v)} />
+                                        <p className="text-xs text-gray-500 italic mt-1">Gunakan format 628xxx (tanpa + atau 0 di depan)</p>
                                     </div>
                                 ))}
                             </div>

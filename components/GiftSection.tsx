@@ -58,24 +58,37 @@ export default function GiftSection({ weddingData }: GiftSectionProps) {
                             </div>
                             <p className="text-gray-500 mb-6 font-medium">a.n {gift.accountHolder}</p>
 
-                            <button
-                                onClick={() => copyToClipboard(gift.accountNumber, index)}
-                                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
-                                    copiedIndex === index
-                                        ? 'bg-green-500 text-white'
-                                        : 'bg-navy-700 text-white hover:bg-navy-800 shadow-lg hover:shadow-xl'
-                                }`}
-                            >
-                                {copiedIndex === index ? (
-                                    <>
-                                        <FaCheck /> Tersalin
-                                    </>
-                                ) : (
-                                    <>
-                                        <FaCopy /> Salin Nomor
-                                    </>
+                            <div className="flex flex-col gap-3">
+                                <button
+                                    onClick={() => copyToClipboard(gift.accountNumber, index)}
+                                    className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 font-semibold ${
+                                        copiedIndex === index
+                                            ? 'bg-green-500 text-white'
+                                            : 'bg-navy-700 text-white hover:bg-navy-800 shadow-lg hover:shadow-xl'
+                                    }`}
+                                >
+                                    {copiedIndex === index ? (
+                                        <>
+                                            <FaCheck /> Tersalin
+                                        </>
+                                    ) : (
+                                        <>
+                                            <FaCopy /> Salin Nomor
+                                        </>
+                                    )}
+                                </button>
+                                
+                                {gift.whatsapp && (
+                                    <a
+                                        href={`https://wa.me/${gift.whatsapp}?text=Halo%20${gift.accountHolder},%20saya%20sudah%20mengirimkan%20kado%20ya!`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-500 text-white font-semibold transition-all shadow-lg hover:shadow-xl"
+                                    >
+                                        Konfirmasi via WhatsApp
+                                    </a>
                                 )}
-                            </button>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

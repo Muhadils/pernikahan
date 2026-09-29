@@ -69,6 +69,7 @@ export interface WeddingData {
         bankName: string;
         accountNumber: string;
         accountHolder: string;
+        whatsapp?: string; // Optional whatsapp number
         qrCode?: string;
     }>;
 }
@@ -76,10 +77,10 @@ export interface WeddingData {
 export const weddingData: WeddingData = {
     couple: {
         bride: {
-            fullName: 'Putra',
-            shortName: 'Putra',
-            instagram: '@putra',
-            parents: 'Putri dari Bapak [Nama Ayah Putra] & Ibu [Nama Ibu Putra]',
+            fullName: 'Putri',
+            shortName: 'Putri',
+            instagram: '@putri',
+            parents: 'Putri dari Bapak [Nama Ayah Putri] & Ibu [Nama Ibu Putri]',
         },
         groom: {
             fullName: 'Hamja',
@@ -176,12 +177,14 @@ export const weddingData: WeddingData = {
         {
             bankName: 'BCA',
             accountNumber: '1234567890',
-            accountHolder: 'Salma Azzahra'
+            accountHolder: 'Salma Azzahra',
+            whatsapp: '6281234567890'
         },
         {
             bankName: 'Mandiri',
             accountNumber: '0987654321',
-            accountHolder: 'Andri Kurniawan'
+            accountHolder: 'Andri Kurniawan',
+            whatsapp: '6280987654321'
         }
     ]
 };
