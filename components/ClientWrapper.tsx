@@ -48,6 +48,7 @@ export default function ClientWrapper({ guestName, weddingData }: ClientWrapperP
                 <div className="animate-fade-in">
                     <MusicPlayer shouldPlay={playMusic} weddingData={weddingData} />
                     <HeroSection weddingData={weddingData} />
+                    <QuotesSection type="opening" />
                     <CountdownTimer weddingData={weddingData} />
                     <EventDetails weddingData={weddingData} />
                     <PhotoGallery weddingData={weddingData} />
