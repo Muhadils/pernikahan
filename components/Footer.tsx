@@ -62,35 +62,7 @@ export default function Footer({ weddingData }: FooterProps) {
 
                     {/* Share Buttons */}
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
-                        <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={() => handleShare('whatsapp')}
-                            className="flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-full font-semibold shadow-lg transition-all"
-                        >
-                            <FaWhatsapp className="text-xl" />
-                            WhatsApp
-                        </motion.button>
-
-                        <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={() => handleShare('facebook')}
-                            className="flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-600 text-white rounded-full font-semibold shadow-lg transition-all"
-                        >
-                            <FaFacebook className="text-xl" />
-                            Facebook
-                        </motion.button>
-
-                        <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={() => handleShare('twitter')}
-                            className="flex items-center gap-2 px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white rounded-full font-semibold shadow-lg transition-all"
-                        >
-                            <FaTwitter className="text-xl" />
-                            Twitter
-                        </motion.button>
+                        {/* Removed WA, FB, Twitter per request */}
 
                         <motion.button
                             whileHover={{ scale: 1.1 }}
