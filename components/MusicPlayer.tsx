@@ -103,15 +103,14 @@ export default function MusicPlayer({ shouldPlay, weddingData }: MusicPlayerProp
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
-                className="fixed bottom-8 right-8 z-50"
-                // Removed onMouseEnter and onMouseLeave events
+                className="fixed bottom-4 right-4 z-50"
             >
-                <div className="glass-gold rounded-full p-4 shadow-2xl">
+                <div className="bg-white/70 backdrop-blur-sm rounded-full p-1.5 shadow-md border border-gray-100">
                     <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={togglePlay}
-                        className="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center text-white shadow-lg glow"
+                        className="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white shadow-sm"
                     >
                         {isPlaying ? (
                             <motion.div
@@ -120,7 +119,7 @@ export default function MusicPlayer({ shouldPlay, weddingData }: MusicPlayerProp
                                 animate={{ rotate: 0, opacity: 1 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <FaPause className="text-lg" />
+                                <FaPause className="text-[10px]" />
                             </motion.div>
                         ) : (
                             <motion.div
@@ -129,7 +128,7 @@ export default function MusicPlayer({ shouldPlay, weddingData }: MusicPlayerProp
                                 animate={{ rotate: 0, opacity: 1 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <FaPlay className="text-lg ml-1" />
+                                <FaPlay className="text-[10px] ml-0.5" />
                             </motion.div>
                         )}
                     </motion.button>
@@ -137,40 +136,39 @@ export default function MusicPlayer({ shouldPlay, weddingData }: MusicPlayerProp
                     <AnimatePresence>
                         {showControls && (
                             <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 10 }}
+                                initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: 10, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
-                                className="absolute bottom-full right-full mr-2 mb-3 glass-gold rounded-2xl p-3 min-w-[200px]"
+                                className="absolute bottom-full right-0 mb-2 bg-white/95 backdrop-blur-md rounded-lg p-2 shadow-lg border border-gray-100 min-w-[120px]"
                             >
-                                <div className="mb-3 text-center">
-                                    <p className="font-elegant text-sm font-semibold text-navy-800">
+                                <div className="mb-1 text-center">
+                                    <p className="text-[9px] uppercase tracking-wider font-bold text-gray-900 truncate px-1">
                                         {weddingData.music.title}
                                     </p>
-                                    <p className="text-xs text-navy-600">{weddingData.music.artist}</p>
                                 </div>
 
-                                <div className="flex items-center justify-center gap-3">
+                                <div className="flex items-center justify-center gap-2">
                                     <button
                                         onClick={toggleMute}
-                                        className="text-gold-600 hover:text-gold-700 transition-colors"
+                                        className="text-gray-800 hover:text-black transition-colors"
                                     >
-                                        {isMuted ? <FaVolumeMute className="text-lg" /> : <FaVolumeUp className="text-lg" />}
+                                        {isMuted ? <FaVolumeMute className="text-xs" /> : <FaVolumeUp className="text-xs" />}
                                     </button>
                                 </div>
 
                                 {isPlaying && (
-                                    <div className="flex justify-center gap-1 mt-2">
+                                    <div className="flex justify-center gap-0.5 mt-1.5">
                                         {[0, 1, 2].map((i) => (
                                             <motion.div
                                                 key={i}
-                                                animate={{ scaleY: [1, 1.5, 1] }}
+                                                animate={{ scaleY: [1, 1.8, 1] }}
                                                 transition={{
                                                     duration: 0.8,
                                                     repeat: Infinity,
                                                     delay: i * 0.2,
                                                 }}
-                                                className="w-1 h-3 bg-gold-500 rounded-full"
+                                                className="w-0.5 h-1.5 bg-black rounded-full"
                                             />
                                         ))}
                                     </div>

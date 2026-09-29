@@ -22,9 +22,9 @@ export async function getWeddingData(): Promise<WeddingData> {
             .select('*')
             .order('created_at', { ascending: false });
 
-        if (settingsError || wishesError || galleryError) {
-            console.error('Supabase Error:', { settingsError, wishesError, galleryError });
-        }
+        if (settingsError) console.error('Settings Error:', settingsError.message || settingsError);
+        if (wishesError) console.error('Wishes Error:', wishesError.message || wishesError);
+        if (galleryError) console.error('Gallery Error:', galleryError.message || galleryError);
 
         // Helper untuk memastikan data adalah array dan tidak kosong
         const ensureArray = (data: any, fallback: any[]) => {

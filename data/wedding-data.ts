@@ -53,6 +53,18 @@ export interface WeddingData {
     countdown: {
         targetDate: string;
     };
+    quotes?: {
+        opening: {
+            salam: string;
+            content: string;
+        };
+        closing: {
+            title: string;
+            content: string;
+            salam: string;
+            footer: string;
+        };
+    };
     gifts?: Array<{
         bankName: string;
         accountNumber: string;
@@ -147,6 +159,18 @@ export const weddingData: WeddingData = {
         url: '/music/WhatsApp Video 2026-02-16 at 23.34.29.mp3',
         title: 'Background Music',
         artist: 'Salma & Andri',
+    },
+    quotes: {
+        opening: {
+            salam: 'Assalamu’alikum Warahmatullahi Wabarakatuh',
+            content: 'Maha Suci Allah Subhanahu wa Ta’ala yang telah menciptakan makhluk-Nya berpasang-pasangan.\n\nYa Allah, dengan segala kerendahan hati kami memohon ridho dan berkah-Mu, limpahkanlah rahmat serta karunia-Mu untuk mengiringi langkah kami dalam membina ikatan suci pernikahan ini, agar senantiasa diliputi sakinah, mawaddah, dan warahmah.'
+        },
+        closing: {
+            title: 'Terima Kasih',
+            content: 'Merupakan suatu kebahagiaan serta kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu kepada kami.\n\nAtas kehadiran dan doa restu yang diberikan, kami ucapkan terima kasih.',
+            salam: 'Wassalamu’alikum Warahmatullahi Wabarakatuh',
+            footer: 'Kami yang berbahagia'
+        }
     },
     gifts: [
         {

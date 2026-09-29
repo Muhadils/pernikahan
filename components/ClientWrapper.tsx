@@ -13,6 +13,7 @@ import LocationMap from '@/components/LocationMap';
 import GiftSection from '@/components/GiftSection';
 import RSVPForm from '@/components/RSVPForm';
 import WishesSection from '@/components/WishesSection';
+import QuotesSection from '@/components/QuotesSection';
 import Footer from '@/components/Footer';
 import { WeddingData } from '@/data/wedding-data';
 
@@ -54,6 +55,7 @@ export default function ClientWrapper({ guestName, weddingData }: ClientWrapperP
                     {/* <GiftSection weddingData={weddingData} /> */}
                     <RSVPForm weddingData={weddingData} />
                     <WishesSection weddingData={weddingData} />
+                    <QuotesSection type="closing" />
                     <Footer weddingData={weddingData} />
                 </div>
             )}
