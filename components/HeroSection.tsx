@@ -180,12 +180,28 @@ export default function HeroSection({ weddingData }: HeroSectionProps) {
                     >
                         <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <p className="font-elegant text-2xl md:text-3xl text-white relative z-10">
-                            {new Date(weddingData.events[0].date).toLocaleDateString('id-ID', {
-                                weekday: 'long',
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric',
-                            })}
+                            {(() => {
+                                const events = weddingData.events;
+                                if (!events || events.length === 0) return '';
+                                const dates = events.map(e => new Date(e.date));
+                                const uniqueTimes = Array.from(new Set(dates.map(d => d.getTime())));
+                                const uniqueDates = uniqueTimes.map(time => new Date(time)).sort((a, b) => a.getTime() - b.getTime());
+                                
+                                if (uniqueDates.length === 1) {
+                                    return uniqueDates[0].toLocaleDateString('id-ID', {
+                                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                                    });
+                                }
+                                
+                                const first = uniqueDates[0];
+                                const last = uniqueDates[uniqueDates.length - 1];
+                                
+                                if (first.getMonth() === last.getMonth() && first.getFullYear() === last.getFullYear()) {
+                                    return `${first.getDate()} & ${last.getDate()} ${first.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' })}`;
+                                }
+                                
+                                return `${first.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })} & ${last.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+                            })()}
                         </p>
                     </motion.div>
                 </motion.div>

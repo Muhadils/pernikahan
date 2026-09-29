@@ -127,11 +127,28 @@ export default function Footer({ weddingData }: FooterProps) {
                         );
                     })()}
                     <p className="font-alex-brush text-xl text-gray-500">
-                        {new Date(weddingData.events[0].date).toLocaleDateString('id-ID', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric',
-                        })}
+                        {(() => {
+                            const events = weddingData.events;
+                            if (!events || events.length === 0) return '';
+                            const dates = events.map(e => new Date(e.date));
+                            const uniqueTimes = Array.from(new Set(dates.map(d => d.getTime())));
+                            const uniqueDates = uniqueTimes.map(time => new Date(time)).sort((a, b) => a.getTime() - b.getTime());
+                            
+                            if (uniqueDates.length === 1) {
+                                return uniqueDates[0].toLocaleDateString('id-ID', {
+                                    day: 'numeric', month: 'long', year: 'numeric',
+                                });
+                            }
+                            
+                            const first = uniqueDates[0];
+                            const last = uniqueDates[uniqueDates.length - 1];
+                            
+                            if (first.getMonth() === last.getMonth() && first.getFullYear() === last.getFullYear()) {
+                                return `${first.getDate()} & ${last.getDate()} ${first.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' })}`;
+                            }
+                            
+                            return `${first.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })} & ${last.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+                        })()}
                     </p>
                 </motion.div>
 
