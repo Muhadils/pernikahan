@@ -66,6 +66,7 @@ export interface WeddingData {
         };
     };
     gifts?: Array<{
+        title?: string; // Optional title like "Rekening Mempelai Wanita"
         bankName: string;
         accountNumber: string;
         accountHolder: string;
@@ -175,12 +176,14 @@ export const weddingData: WeddingData = {
     },
     gifts: [
         {
+            title: 'Rekening Mempelai Wanita',
             bankName: 'BCA',
             accountNumber: '1234567890',
             accountHolder: 'Salma Azzahra',
             whatsapp: '6281234567890'
         },
         {
+            title: 'Rekening Mempelai Pria',
             bankName: 'Mandiri',
             accountNumber: '0987654321',
             accountHolder: 'Andri Kurniawan',

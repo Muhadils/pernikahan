@@ -52,6 +52,11 @@ export default function GiftSection({ weddingData }: GiftSectionProps) {
                         >
                             <div className="absolute top-0 right-0 w-24 h-24 bg-gold-50 -mr-12 -mt-12 rounded-full group-hover:scale-150 transition-transform duration-500 opacity-50" />
                             
+                            {gift.title && (
+                                <div className="inline-block px-4 py-1.5 bg-gold-100 text-gold-700 text-sm font-bold rounded-full mb-4">
+                                    {gift.title}
+                                </div>
+                            )}
                             <h3 className="text-xl font-bold text-navy-800 mb-2 uppercase tracking-wider">{gift.bankName}</h3>
                             <div className="text-2xl font-mono text-gold-600 font-bold mb-1">
                                 {gift.accountNumber}

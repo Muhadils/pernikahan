@@ -436,6 +436,7 @@ export default function AdminPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {Array.isArray(data.gifts) && data.gifts.map((gift: any, index: number) => (
                                     <div key={index} className="border-2 rounded-2xl p-6 bg-gray-50">
+                                        <InputField label="Label (Cth: Rekening Mempelai Wanita)" value={gift.title} onChange={(v) => updateField(`gifts[${index}].title`, v)} />
                                         <InputField label="Bank / Platform" value={gift.bankName} onChange={(v) => updateField(`gifts[${index}].bankName`, v)} />
                                         <InputField label="Nomor Rekening" value={gift.accountNumber} onChange={(v) => updateField(`gifts[${index}].accountNumber`, v)} />
                                         <InputField label="Nama Pemilik" value={gift.accountHolder} onChange={(v) => updateField(`gifts[${index}].accountHolder`, v)} />
